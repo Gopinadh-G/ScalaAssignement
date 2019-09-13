@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+#GET     /                           controllers.EarthController.index
+POST    /addContinent               controllers.EarthController.addContinent
+GET     /getContinents                  controllers.EarthController.getContinents
+DELETE  /deleteContinent/:continent             controllers.EarthController.deleteContinent(continent)
+POST    /addCountry                 controllers.EarthController.addCountry
+GET     /getCountries               controllers.EarthController.getCountries
+
+GET     /getContinentOfCountry/:country     controllers.EarthController.getContinentOfCountry(country)
+GET     /checkContinentsSame                controllers.EarthController.checkIfTheContinentsAreSame(c1,c2)
+POST    /addCities                          controllers.EarthController.addCities
+GET     /getCitiesOfContinent/:continent    controllers.EarthController.getCitiesOfContinent(continent)
+GET     /getCitiesByFirstLetter             controllers.EarthController.getCitiesByFirstLetter
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
